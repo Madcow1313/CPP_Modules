@@ -9,7 +9,6 @@ void	print_promt(std::string	string)
 	std::cout << '|'; 
 }
 
-
 void	phone_book::print_fields(int index)
 {
 	std::cout << "First name: " << this->human[index].get_fname() << std::endl;
@@ -117,7 +116,6 @@ int	phone_book::iterate_size()
 	max_size += 1;
 	return (max_size);
 }
-
 
 int	phone_book::set_max_size(int number)
 {
