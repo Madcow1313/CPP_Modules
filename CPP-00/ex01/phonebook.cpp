@@ -24,8 +24,11 @@ member::member()
 int	main()
 {
 	phone_book book;
+	int	i;
 
-	book.set_count(0);
+	i = 0;
+	book.set_count(i);
+	book.set_max_size(0);
 	while (1)
 	{
 		std::cout << "Hello, please command!" << std::endl;
@@ -35,14 +38,13 @@ int	main()
 			break ;
 		else if (compare_strings(command) == 1)
 		{
-			book.iterate_counter();
+			if (book.get_max_size() < 9)
+				book.iterate_counter();
 			book.add();
-			if (book.get_count() > 9)
-				book.set_count(0);
 		}
 		else if (compare_strings(command) == 2)
-			;
-		else
+			book.search();
+		else if (!compare_strings(command))
 			std::cout << "Unknown command, please try ADD, SEARCH or EXIT" << std::endl;
 	}
 	return (0);

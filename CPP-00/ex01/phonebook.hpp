@@ -2,6 +2,7 @@
 # define P_H_O_N_E_B_O_O_K_H_P_P
 
 # include <iostream>
+# include <iomanip>
 
 class	member
 {	
@@ -41,9 +42,12 @@ class phone_book
 		int		get_count();
 		int		set_count(int number);
 		int		iterate_counter();
+		int		set_max_size(int number);
+		int		get_max_size();
 	private:
 		member	human[10];
 		int		member_count;
+		int		max_size;
 };
 
 #endif
