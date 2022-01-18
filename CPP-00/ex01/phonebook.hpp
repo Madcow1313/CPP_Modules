@@ -44,6 +44,8 @@ class phone_book
 		int		iterate_counter();
 		int		set_max_size(int number);
 		int		get_max_size();
+		int		iterate_size();
+		void	print_fields(int index);
 	private:
 		member	human[10];
 		int		member_count;

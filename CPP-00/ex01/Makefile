@@ -14,7 +14,7 @@ OBJS = $(SOURCE:.cpp=.o)
 		$(CC) $(INCLUDE) $(CFLAGS) -c $< -o $(<:.cpp=.o)
 
 $(NAME): $(HEADER) $(OBJS)
-		$(CC) $(CFLAGS) $(HEADER) -std=c++98 $(OBJS) -o $(NAME)
+		$(CC) $(CFLAGS) -std=c++98 $(OBJS) -o $(NAME)
 
 all: $(NAME)
 
@@ -24,4 +24,4 @@ clean:
 fclean: clean
 		rm -rf $(NAME)
 
-re:	fclean all		
+re:	fclean all

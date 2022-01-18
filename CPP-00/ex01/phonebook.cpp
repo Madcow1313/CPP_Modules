@@ -24,28 +24,31 @@ member::member()
 int	main()
 {
 	phone_book book;
+	std::string	command;
 	int	i;
 
 	i = 0;
 	book.set_count(i);
 	book.set_max_size(0);
-	while (1)
+	for (;;)
 	{
 		std::cout << "Hello, please command!" << std::endl;
-		std::string	command;
 		std::getline(std::cin, command);
 		if (compare_strings(command) == 3)
 			break ;
 		else if (compare_strings(command) == 1)
 		{
-			if (book.get_max_size() < 9)
-				book.iterate_counter();
+			if (book.get_max_size() < 8)
+				book.iterate_size();
 			book.add();
+			book.iterate_counter();
 		}
 		else if (compare_strings(command) == 2)
 			book.search();
 		else if (!compare_strings(command))
 			std::cout << "Unknown command, please try ADD, SEARCH or EXIT" << std::endl;
+		else
+			std::cout << std::endl;
 	}
 	return (0);
 }
