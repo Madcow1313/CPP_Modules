@@ -29,7 +29,7 @@ int	main()
 
 	i = 0;
 	book.set_count(i);
-	book.set_max_size(0);
+	book.set_max_size(i);
 	for (;;)
 	{
 		std::cout << "Hello, please command!" << std::endl;

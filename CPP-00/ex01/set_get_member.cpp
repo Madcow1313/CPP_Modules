@@ -22,7 +22,7 @@ std::string	member::get_nickname()
 
 std::string	member::get_phone_number()
 {
-	return last_name;
+	return phone_number;
 }
 
 std::string	member::get_ds()

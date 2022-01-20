@@ -3,10 +3,22 @@
 void	print_promt(std::string	string)
 {
 	std::string	resized_string;
-	resized_string = string;
-	resized_string.resize(10, ' ');
-	std::cout << resized_string;
-	std::cout << '|'; 
+	if (string.size() > 10)
+	{
+		resized_string = string;
+		resized_string.resize(9);
+		std::cout << resized_string;
+		std::cout << '.';
+		std::cout << '|'; 
+	}
+	else
+	{
+		resized_string = string;
+		resized_string.resize(10, ' ');
+		std::cout << resized_string;
+		std::cout << '|'; 
+	}
+
 }
 
 void	phone_book::print_fields(int index)
@@ -41,7 +53,7 @@ void	phone_book::search()
 		for(;;)
 		{
 			std::cout << "Please, enter preferable contact's index" << std::endl;
-			std::cin >> index;
+			std::getline(std::cin, index);
 			if (index.size() > 1)
 				std::cout << "Unknown index, please type again or type 9 to exit" << std::endl;
 			else
@@ -72,25 +84,25 @@ void	phone_book::add()
 
 	this->human[this->member_count % 8].set_index(this->member_count % 8 + 1);
 	std::cout << "Please, enter first name" << std::endl;
-	std::cin >> input;
+	std::getline(std::cin, input);
 	this->human[this->member_count % 8].set_first_name(input);
 
 	std::cout << "Please, enter last name" << std:: endl;
-	std::cin >> input;
+	std::getline(std::cin, input);
 	this->human[this->member_count % 8].set_last_name(input);
 
 	std::cout << "Please, enter nickname" << std:: endl;
-	std::cin >> input;
+	std::getline(std::cin, input);
 	this->human[this->member_count % 8].set_nickname(input);
 
 	std::cout << "Please, enter phone number" << std:: endl;
-	std::cin >> input;
+	std::getline(std::cin, input);
 	this->human[this->member_count % 8].set_phone_number(input);
 
 	std::cout
 		<< "Please, enter member's darkest secret, I will not tell anyone"
 			<< std:: endl;
-	std::cin >> input;
+	std::getline(std::cin, input);
 	this->human[this->member_count % 8].set_ds(input);
 }
 
