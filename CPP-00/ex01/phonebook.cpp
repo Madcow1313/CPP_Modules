@@ -16,7 +16,7 @@ int	compare_strings(std::string command)
 	return (0);
 }
 
-member::member()
+contact::contact()
 {
 	return ;
 }

@@ -51,3 +51,9 @@ void	Account::displayStatus(void) const
 {
 
 }
+
+
+void	Account::_displayTimestamp(void)
+{
+
+}

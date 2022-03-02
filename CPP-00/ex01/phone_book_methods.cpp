@@ -52,13 +52,13 @@ void	phone_book::search()
 	{
 		for(;;)
 		{
-			std::cout << "Please, enter preferable contact's index" << std::endl;
+			std::cout << "Please, enter preferable contact's index or 9 for exit" << std::endl;
 			std::getline(std::cin, index);
 			if (index.size() > 1)
 				std::cout << "Unknown index, please type again or type 9 to exit" << std::endl;
 			else
 			{
-				index_number = atoi(index.c_str());
+				index_number = std::atoi(index.c_str());
 				if (index_number == 0)
 					std::cout << "Unknown index, please type again or type 9 to exit" << std::endl;
 				else if (index_number == 9)
@@ -81,29 +81,85 @@ void	phone_book::search()
 void	phone_book::add()
 {
 	std::string	input;
+	int	number;
 
 	this->human[this->member_count % 8].set_index(this->member_count % 8 + 1);
+
 	std::cout << "Please, enter first name" << std::endl;
-	std::getline(std::cin, input);
-	this->human[this->member_count % 8].set_first_name(input);
+	for (;;)
+	{
+		std::getline(std::cin, input);
+		if (input.length())
+		{
+			this->human[this->member_count % 8].set_first_name(input);
+			break ;
+		}
+		else
+			std::cout << "Field is empty. Please, enter first name" << std::endl;
+	}
 
 	std::cout << "Please, enter last name" << std:: endl;
-	std::getline(std::cin, input);
-	this->human[this->member_count % 8].set_last_name(input);
+	for (;;)
+	{
+		std::getline(std::cin, input);
+		if (input.length())
+		{
+			this->human[this->member_count % 8].set_last_name(input);
+			break ;
+		}
+		else
+			std::cout << "Field is empty. Please, enter last name" << std::endl;
+	}
 
 	std::cout << "Please, enter nickname" << std:: endl;
-	std::getline(std::cin, input);
-	this->human[this->member_count % 8].set_nickname(input);
+	for (;;)
+	{
+		std::getline(std::cin, input);
+		if (input.length())
+		{
+			this->human[this->member_count % 8].set_nickname(input);
+			break ;
+		}
+		else
+			std::cout << "Field is empty. Please, enter nickname" << std::endl;
+	}
 
 	std::cout << "Please, enter phone number" << std:: endl;
-	std::getline(std::cin, input);
-	this->human[this->member_count % 8].set_phone_number(input);
+	for (;;)
+	{
+		std::getline(std::cin, input);
+
+		number = std::atoi(input.c_str());
+		if (number <= 0)
+		{
+			std::cout << "Phone number must be positive integer, please try again" << std::endl;
+			continue ;
+		}
+		if (input.length())
+		{
+			this->human[this->member_count % 8].set_phone_number((number));
+			break ;
+		}
+		else
+			std::cout << "Field is empty. Please, enter phone number" << std::endl;
+	}
+
 
 	std::cout
 		<< "Please, enter member's darkest secret, I will not tell anyone"
 			<< std:: endl;
-	std::getline(std::cin, input);
-	this->human[this->member_count % 8].set_ds(input);
+	for (;;)
+	{
+		std::getline(std::cin, input);
+		if (input.length())
+		{
+			this->human[this->member_count % 8].set_ds(input);
+			break ;
+		}
+		else
+			std::cout << "Field is empty. Please, enter darkest secret" << std::endl;
+	}
+
 }
 
 int	phone_book::get_count()

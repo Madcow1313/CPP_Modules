@@ -11,7 +11,7 @@ SOURCE = phonebook.cpp set_get_member.cpp phone_book_methods.cpp
 OBJS = $(SOURCE:.cpp=.o)
 
 .cpp.o:
-		$(CC) $(INCLUDE) $(CFLAGS) -c $< -o $(<:.cpp=.o)
+		$(CC) $(INCLUDE) $(CFLAGS) -std=c++98 -c $< -o $(<:.cpp=.o)
 
 $(NAME): $(HEADER) $(OBJS)
 		$(CC) $(CFLAGS) -std=c++98 $(OBJS) -o $(NAME)
