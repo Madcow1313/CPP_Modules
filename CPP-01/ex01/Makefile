@@ -11,7 +11,7 @@ SOURCE = Zombie.cpp main.cpp zombieHorde.cpp
 OBJS = $(SOURCE:.cpp=.o)
 
 .cpp.o:
-		$(CC) $(INCLUDE) $(CFLAGS) -std=c++98 -c $< -o $(<:.cpp=.o)
+		$(CC) $(HEADER) $(CFLAGS) -std=c++98 -c $< -o $(<:.cpp=.o)
 
 $(NAME): $(HEADER) $(OBJS)
 		$(CC) $(CFLAGS) -std=c++98 $(OBJS) -o $(NAME)

@@ -34,6 +34,8 @@ int	main()
 	{
 		std::cout << "Hello, please command!" << std::endl;
 		std::getline(std::cin, command);
+		if(command.length() == 0)
+			break ;
 		if (compare_strings(command) == 3)
 			break ;
 		else if (compare_strings(command) == 1)

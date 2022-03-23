@@ -9,5 +9,4 @@ int	main()
 		fresh_Zombie[i].announce();
 	}
 	delete [] fresh_Zombie;
-
 }
