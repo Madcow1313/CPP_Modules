@@ -11,7 +11,7 @@ private:
 public:
 	DiamondTrap( std::string trapName );
 	~DiamondTrap();
-	using ScavTrap::attack;
+	//using ScavTrap::attack;
 	void	whoAmI();
 	void	printAll();
 };
