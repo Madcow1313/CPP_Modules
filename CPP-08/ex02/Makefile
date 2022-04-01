@@ -1,21 +1,21 @@
-NAME = Fixed
+NAME = Span
 
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror
 
-SOURCE = main.cpp Fixed.cpp
+SOURCE = main.cpp Span.cpp
 
-HEADER= Fixed.hpp
+HEADER = Span.hpp
 
 OBJS = $(SOURCE:.cpp=.o)
 
-.cpp.o: $(INCLUDE)
+.cpp.o:
 		$(CC) $(CFLAGS) -std=c++98 -c $< -o $(<:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(HEADER) $(OBJS)
+$(NAME): $(OBJS) $(HEADER)
 		$(CC) $(CFLAGS) -std=c++98 $(OBJS) -o $(NAME)
 
 clean:
