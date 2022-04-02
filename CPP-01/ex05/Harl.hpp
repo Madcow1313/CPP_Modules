@@ -1,10 +1,10 @@
-#ifndef KAREN_HPP
-#define KAREN_HPP
+#ifndef HARL_HPP
+#define HARL_HPP
 
 #include <iostream>
 #include <iomanip>
 
-class Karen
+class Harl
 {
 private:
 	void debug( void );
@@ -12,11 +12,11 @@ private:
 	void warning( void );
 	void error( void );
 public:
-	Karen();
-	~Karen();
+	Harl();
+	~Harl();
 	void complain( std::string level);
 };
 
-typedef void (Karen::*Memberfunction)( void );
+typedef void (Harl::*Memberfunction)( void );
 
 #endif

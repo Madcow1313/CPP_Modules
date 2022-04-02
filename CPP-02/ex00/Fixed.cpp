@@ -1,7 +1,5 @@
 #include "Fixed.hpp"
 
-static const int f_bits = 8;
-
 Fixed::Fixed()
 {
 	this->value = 0;
@@ -13,15 +11,16 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed const &other) : value(other.value)
+Fixed::Fixed(Fixed const &other)
 {
 	std::cout << "Copy constructor called" << std::endl;
+	this->value = other.getRawBits();
 }
 
 Fixed& Fixed::operator=(Fixed const &other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->value = other.value;
+	this->value = other.getRawBits();
 	return (*this);
 }
 

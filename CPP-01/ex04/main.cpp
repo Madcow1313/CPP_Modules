@@ -4,17 +4,20 @@
 /*error somewhere in insert*/
 std::string	ft_replace( std::string full_string, std::string old_str, std::string new_str )
 {
-	size_t	start = 0;
+	size_t len = strlen(old_str.c_str());
+	size_t	start = full_string.find(old_str.c_str(), 0, len);
 	
-	std::cout << old_str << std::endl;
-	while((start = full_string.find(old_str, 0)) != std::string::npos)
+	//std::cout << old_str << std::endl;
+	while(start != std::string::npos)
 	{
 		full_string.erase(start, old_str.length());
-		std::cout << full_string << std::endl;
+		//std::cout << full_string << std::endl;
 		full_string.insert(start, new_str);
-		std::cout << full_string << std::endl;
+		start = start + len;
+		start = full_string.find(old_str.c_str(), start, len);
+		//std::cout << full_string << std::endl;
 	}
-	std::cout << new_str;
+	//std::cout << new_str;
 	return(full_string);
 }
 
@@ -52,6 +55,10 @@ int	main(int argc, char **argv)
 	{
 		replaced = ft_replace(input, s1, s2);
 		outfile << replaced;
+		if (infile.eof())
+			break;
+		if (replaced.c_str())
+			outfile << std::endl;
 	}
 	infile.close();
 	outfile.close();

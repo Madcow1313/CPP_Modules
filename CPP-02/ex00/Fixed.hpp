@@ -2,6 +2,9 @@
 #define FIXED_HPP
 #include <iomanip>
 #include <iostream>
+
+static const int f_bits = 8;
+
 class Fixed
 {
 	private:

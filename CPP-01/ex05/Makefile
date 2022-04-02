@@ -1,17 +1,16 @@
-NAME = karen
-
+NAME = Harl
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror
 
-SOURCE = main.cpp Karen.cpp
+SOURCE = main.cpp Harl.cpp
 
-HEADER = Karen.hpp
+HEADER = Harl.hpp
 
 OBJS = $(SOURCE:.cpp=.o)
 
-.cpp.o:
-		$(CC) $(HEADER $(CFLAGS) -std=c++98 -c $< -o $(<:.cpp=.o)
+.cpp.o: $(HEADER)
+		$(CC)  $(CFLAGS) -std=c++98 -c $< -o $(<:.cpp=.o)
 
 $(NAME): $(HEADER) $(OBJS)
 		$(CC) $(CFLAGS) -std=c++98 $(OBJS) -o $(NAME)

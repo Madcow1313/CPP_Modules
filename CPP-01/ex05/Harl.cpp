@@ -1,52 +1,53 @@
-#include "Karen.hpp"
+#include "Harl.hpp"
 
-Karen::Karen()
+Harl::Harl()
 {
-	std::cout << "Karen is nearby" << std::endl;
+	std::cout << "Harl is nearby" << std::endl;
 }
 
-Karen::~Karen()
+Harl::~Harl()
 {
-	std::cout << "Karen walked away to be annoying somewhere else" << std::endl;
+	std::cout << "Harl walked away to be annoying somewhere else" << std::endl;
 }
 
-void Karen::debug()
+void Harl::debug()
 {
 	std::cout
 		<< "I love having extra bacon for " <<
 		"my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
 }
 
-void Karen::info()
+void Harl::info()
 {
 	std::cout
 		<< "I cannot believe adding extra bacon costs more money. You didn't put " <<
 		"enough bacon in my burger! If you did, I wouldn't be asking for more!" << std::endl;
 }
 
-void Karen::warning()
+void Harl::warning()
 {
 	std::cout
-		<< "I think I deserve to have some extra bacon for free. I've been coming for "
+		<< "I think I deserve to have some extra bacon for free. I've been coming for " <<
 		"years whereas you started working here since last month." << std::endl;
 }
 
-void Karen::error()
+void Harl::error()
 {
 	std::cout
 		<< "This is unacceptable! I want to speak to the manager now!" << std::endl;
 }
 
-void Karen::complain(std::string level)
+void Harl::complain(std::string level)
 {
-	Memberfunction mf[4] = {&Karen::debug, &Karen::info, &Karen::warning, &Karen::error};
+	Memberfunction mf[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	std::string complain_level[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	for (int i = 0; i < 4; i++)
 	{
 		if (!level.compare(complain_level[i]))
 		{
 			(this->*mf[i])();
-			break;
+			return ;
 		}
 	}
+	std::cout << "Harl forgot all words in anger!" << std::endl;
 }
