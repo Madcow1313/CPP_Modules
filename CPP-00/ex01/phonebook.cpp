@@ -1,6 +1,6 @@
 #include "./phonebook.hpp"
 
-phone_book::phone_book()
+Phone_book::Phone_book()
 {
 	return ;
 }
@@ -16,14 +16,14 @@ int	compare_strings(std::string command)
 	return (0);
 }
 
-contact::contact()
+Contact::Contact()
 {
 	return ;
 }
 
 int	main()
 {
-	phone_book book;
+	Phone_book book;
 	std::string	command;
 	int	i;
 
@@ -34,8 +34,8 @@ int	main()
 	{
 		std::cout << "Hello, please command!" << std::endl;
 		std::getline(std::cin, command);
-		if(command.length() == 0)
-			break ;
+		if (!command.length())
+			continue ;
 		if (compare_strings(command) == 3)
 			break ;
 		else if (compare_strings(command) == 1)

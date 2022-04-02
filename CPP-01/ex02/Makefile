@@ -8,8 +8,8 @@ SOURCE = main.cpp
 
 OBJS = $(SOURCE:.cpp=.o)
 
-.cpp.o:
-		$(CC) $(HEADER) $(CFLAGS) -std=c++98 -c $< -o $(<:.cpp=.o)
+.cpp.o: $(HEADER) 
+		$(CC) $(CFLAGS) -std=c++98 -c $< -o $(<:.cpp=.o)
 
 $(NAME): $(OBJS)
 		$(CC) $(CFLAGS) -std=c++98 $(OBJS) -o $(NAME)

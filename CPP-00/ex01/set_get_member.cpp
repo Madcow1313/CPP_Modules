@@ -1,67 +1,61 @@
 #include "phonebook.hpp"
 
-int	contact::get_index()
+int	Contact::get_index()
 {
 	return index;
 }
 
-std::string contact::get_fname()
+std::string Contact::get_fname()
 {
 	return first_name;
 }
 
-std::string	contact::get_lastname()
+std::string	Contact::get_lastname()
 {
 	return last_name;
 }
 
-std::string	contact::get_nickname()
+std::string	Contact::get_nickname()
 {
 	return nickname;
 }
 
-int	contact::get_phone_number()
+std::string	Contact::get_phone_number()
 {
 	return phone_number;
 }
 
-std::string	contact::get_ds()
+std::string	Contact::get_ds()
 {
 	return darkest_secret;
 }
 
-int contact::set_index(int out_index)
+void Contact::set_index(int out_index)
 {
 	index = out_index;
-	return (index);
 }
 
-std::string contact::set_first_name(std::string out_string)
+void Contact::set_first_name(std::string out_string)
 {
 	first_name = out_string;
-	return (first_name);
 }
 
-std::string contact::set_last_name(std::string out_string)
+void Contact::set_last_name(std::string out_string)
 {
 	last_name = out_string;
-	return (last_name);
 }
 
-std::string contact::set_nickname(std::string out_string)
+void Contact::set_nickname(std::string out_string)
 {
 	nickname = out_string;
-	return (nickname);
 }
 
-int contact::set_phone_number(int number)
+void Contact::set_phone_number(std::string input)
 {
-	phone_number = number;
-	return (phone_number);
+	phone_number = input;
 }
 
-std::string contact::set_ds(std::string out_string)
+void Contact::set_ds(std::string out_string)
 {
 	darkest_secret = out_string;
-	return (darkest_secret);
 }

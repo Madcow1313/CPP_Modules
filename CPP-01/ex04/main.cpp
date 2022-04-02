@@ -4,7 +4,7 @@
 /*error somewhere in insert*/
 std::string	ft_replace( std::string full_string, std::string old_str, std::string new_str )
 {
-	size_t	start;
+	size_t	start = 0;
 	
 	std::cout << old_str << std::endl;
 	while((start = full_string.find(old_str, 0)) != std::string::npos)

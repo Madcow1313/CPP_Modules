@@ -21,7 +21,7 @@ void	print_promt(std::string	string)
 
 }
 
-void	phone_book::print_fields(int index)
+void	Phone_book::print_fields(int index)
 {
 	std::cout << "First name: " << this->human[index].get_fname() << std::endl;
 	std::cout << "Last name: " << this->human[index].get_lastname() << std::endl;
@@ -30,7 +30,7 @@ void	phone_book::print_fields(int index)
 	std::cout << "Darkest secret (please, don't tell anyone): " << this->human[index].get_ds() << std::endl;
 }
 
-void	phone_book::search()
+void	Phone_book::search()
 {
 	std::string	index;
 	int	index_number;
@@ -42,7 +42,7 @@ void	phone_book::search()
 	std::cout << std::endl;
 	for (int i = 0; i < this->max_size; i++)
 	{
-		std::cout << this->human[i].get_index() << std::setw(10) << '|';
+		std::cout << std::setw(10) << this->human[i].get_index() << '|';
 		print_promt(this->human[i].get_fname());
 		print_promt(this->human[i].get_lastname());
 		print_promt(this->human[i].get_nickname());
@@ -78,10 +78,9 @@ void	phone_book::search()
 
 }
 
-void	phone_book::add()
+void	Phone_book::add()
 {
 	std::string	input;
-	int	number;
 
 	this->human[this->member_count % 8].set_index(this->member_count % 8 + 1);
 
@@ -129,15 +128,19 @@ void	phone_book::add()
 	{
 		std::getline(std::cin, input);
 
-		number = std::atoi(input.c_str());
+		int number = 1;
+		for (int i = 0; input.c_str()[i]; i++)
+			if (!std::isdigit(input.c_str()[i]))
+				if (i == 0 && input.c_str()[i] != '+')
+					number = 0;
 		if (number <= 0)
 		{
-			std::cout << "Phone number must be positive integer, please try again" << std::endl;
+			std::cout << "Phone number must contain only digits or plus sign at the begining, please try again" << std::endl;
 			continue ;
 		}
 		if (input.length())
 		{
-			this->human[this->member_count % 8].set_phone_number((number));
+			this->human[this->member_count % 8].set_phone_number((input));
 			break ;
 		}
 		else
@@ -162,36 +165,36 @@ void	phone_book::add()
 
 }
 
-int	phone_book::get_count()
+int	Phone_book::get_count()
 {
 	return (member_count);
 }
 
-int	phone_book::set_count(int number)
+int	Phone_book::set_count(int number)
 {
 	member_count = number;
 	return (member_count);
 }
 
-int	phone_book::iterate_counter()
+int	Phone_book::iterate_counter()
 {
 	member_count += 1;
 	return (member_count);
 }
 
-int	phone_book::iterate_size()
+int	Phone_book::iterate_size()
 {
 	max_size += 1;
 	return (max_size);
 }
 
-int	phone_book::set_max_size(int number)
+int	Phone_book::set_max_size(int number)
 {
 	max_size = number;
 	return (max_size);
 }
 
-int	phone_book::get_max_size()
+int	Phone_book::get_max_size()
 {
 	return (max_size);
 }
