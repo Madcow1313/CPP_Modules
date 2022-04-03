@@ -1,5 +1,13 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap()
+{
+	this->name = "Default";
+	this->hit_points = 10;
+	this->energy_points = 50;
+	this->attack_damage = 0;	
+}
+
 ClapTrap::ClapTrap(std::string trapName)
 {
 	std::cout << "Clap trap activated" << std::endl;

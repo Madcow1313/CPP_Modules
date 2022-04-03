@@ -12,6 +12,7 @@ protected:
 	int	energy_points;
 	int	attack_damage;
 public:
+	ClapTrap();
 	ClapTrap(std::string trapName);
 	~ClapTrap();
 	ClapTrap(ClapTrap const &other);

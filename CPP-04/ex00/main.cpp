@@ -27,7 +27,9 @@ int main()
 	delete feta;
 	delete z;
 
+	WrongCat Gloomy;
 
+	Gloomy.makeSound();
 	return (0);
 
 }
