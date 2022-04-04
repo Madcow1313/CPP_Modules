@@ -1,5 +1,9 @@
 #include "ShrubberyCreationForm.hpp"
 
+ShrubberyCreationForm::ShrubberyCreationForm() : Form::Form(), target("NoTarget")
+{
+}
+
 ShrubberyCreationForm::ShrubberyCreationForm( std::string f_target ) : Form::Form( "ShrubberyCreationForm", 145, 147 ), target(f_target)
 {
 	std::cout << "Shrubbery created" << std::endl;

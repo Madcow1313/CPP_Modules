@@ -32,5 +32,16 @@ int main()
 		std::cerr << err.what() << std::endl;
 	}
 	std::cout << Member << std::endl;
+	try
+	{
+		Bureaucrat Member3("Carl", 151);
+		std::cout << Member3 << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	Bureaucrat Carl;
+	std::cout << Carl << std::endl;
 	return (0);
 }

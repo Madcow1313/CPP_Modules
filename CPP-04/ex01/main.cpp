@@ -25,7 +25,9 @@ int main()
 	{
 		delete array[i];
 	}
-	Cat k;
-	Cat m = k;
+	Dog k;
+	Dog m = k;
+
+	m = k;
 	return (0);
 }

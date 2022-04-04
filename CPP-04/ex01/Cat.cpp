@@ -21,6 +21,7 @@ void	Cat::makeSound() const
 
 Cat::Cat(Cat const &other) : Animal::Animal()
 {
+	this->AnimalBrain = NULL;
 	*this = other;
 }
 

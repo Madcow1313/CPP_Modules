@@ -1,5 +1,10 @@
 #include "RobotomyRequestForm.hpp"
 
+RobotomyRequestForm::RobotomyRequestForm() : Form::Form(), target("NoTarget")
+{
+
+}
+
 RobotomyRequestForm::RobotomyRequestForm( std::string f_target ) : Form::Form( "RobotomyRequestForm", 72, 45 ), target(f_target)
 {
 	std::cout << "Robot is created" << std::endl;

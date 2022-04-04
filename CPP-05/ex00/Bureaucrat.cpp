@@ -1,5 +1,10 @@
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat() : name("NoName")
+{
+	this->grade = 150;
+}
+
 Bureaucrat::Bureaucrat( std::string b_Name, int b_Grade ) : name(b_Name), grade(b_Grade)
 {
 	std::cout << "Bureaucrat is coming" << std::endl;

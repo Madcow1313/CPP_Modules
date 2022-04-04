@@ -1,6 +1,10 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
+Form::Form() : name("NoName"), grade(1), gradeToExec(1)
+{	
+}
+
 Form::Form( std::string f_Name, int f_Grade, int f_GradeToExec ) : name(f_Name), grade(f_Grade), gradeToExec(f_GradeToExec)
 {
 	this->is_signed = false;
