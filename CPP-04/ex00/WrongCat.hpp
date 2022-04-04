@@ -8,6 +8,8 @@ public:
 	WrongCat();
 	~WrongCat();
 	void makeSound() const;
+	WrongCat( WrongCat const &other);
+	WrongCat & operator=( WrongCat const &other );
 };
 
 

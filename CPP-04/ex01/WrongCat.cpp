@@ -15,3 +15,14 @@ void	WrongCat::makeSound() const
 {
 	std::cout << "Meeoooooowww shit" << std::endl;
 }
+
+WrongCat::WrongCat(WrongCat const &other)
+{
+	*this = other;
+}
+
+WrongCat &WrongCat::operator=( WrongCat const &other)
+{
+	this->type = other.type;
+	return (*this);
+}

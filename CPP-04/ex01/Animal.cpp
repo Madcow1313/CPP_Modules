@@ -23,14 +23,11 @@ std::string Animal::getType() const
 
 Animal::Animal(Animal const &other)
 {
-	//std::cout << "Clap trap copied itself" << std::endl;
-	//this->type = other.type;
 	*this = other;
 }
 
 Animal &Animal::operator=(Animal const &other)
 {
-	//std::cout << "Clap trap has changed his name (assignment happened)" << std::endl;
 	this->type = other.type;
 	return (*this);
 }

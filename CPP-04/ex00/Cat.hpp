@@ -9,6 +9,8 @@ public:
 	Cat();
 	~Cat();
 	void makeSound() const;
+	Cat( Cat const &other);
+	Cat & operator=( Cat const &other );
 };
 
 

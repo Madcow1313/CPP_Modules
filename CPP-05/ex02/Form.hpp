@@ -13,6 +13,7 @@ class Form
 		const int gradeToExec;
 		bool is_signed;
 	public:
+		Form();
 		Form( std::string f_Name, int f_Grade, int f_GradeToExec );
 		virtual ~Form();
 		Form( Form const &other );

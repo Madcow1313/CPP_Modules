@@ -10,6 +10,8 @@ Cat::Cat() : Animal::Animal()
 Cat::~Cat()
 {
 	std::cout << "Cat is no more interested in you" << std::endl;
+	if (this->AnimalBrain)
+		delete this->AnimalBrain;
 }
 
 void	Cat::makeSound() const
@@ -26,7 +28,9 @@ Cat &Cat::operator=(Cat const &other)
 {
 	std::cout << "Clap trap has changed his name (assignment happened)" << std::endl;
 	this->type = other.type;
-	this->AnimalBrain = new Brain(*other.AnimalBrain);
+	if (this->AnimalBrain == 0)
+		this->AnimalBrain = new Brain();
+	*(this->AnimalBrain) = *(other.AnimalBrain);
 	return (*this);
 }
 

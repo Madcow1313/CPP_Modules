@@ -8,6 +8,8 @@ class Dog : public Animal
 		Dog();
 		~Dog();
 		void makeSound() const;
+		Dog( Dog const &other );
+		Dog & operator=( Dog const &other );
 };
 
 #endif

@@ -15,3 +15,15 @@ void	Cat::makeSound() const
 {
 	std::cout << "Meeoooooowww" << std::endl;
 }
+
+Cat::Cat(Cat const &other)
+{
+	*this = other;
+}
+
+Cat &Cat::operator=(Cat const &other)
+{
+	this->type = other.type;
+	return (*this);
+}
+

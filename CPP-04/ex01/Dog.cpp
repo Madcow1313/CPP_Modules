@@ -10,6 +10,8 @@ Dog::Dog() : Animal::Animal()
 Dog::~Dog()
 {
 	std::cout << this->type << " started avoid you" << std::endl;
+	if (this->AnimalBrain)
+		delete this->AnimalBrain;
 }
 
 void	Dog::makeSound() const
@@ -20,7 +22,9 @@ void	Dog::makeSound() const
 Dog &Dog::operator=(Dog const &other)
 {
 	this->type = other.type;
-	this->AnimalBrain = new Brain(*other.AnimalBrain);
+	if (this->AnimalBrain == 0)
+		this->AnimalBrain = new Brain();
+	*(this->AnimalBrain) = *(other.AnimalBrain);
 	return (*this);
 }
 
