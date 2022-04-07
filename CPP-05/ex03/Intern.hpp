@@ -21,8 +21,6 @@ class Intern
 		{
 			const char *what() const throw();
 		};
-
-
 };
 
 typedef Form* (Intern::*Memberfunction)( std::string target );

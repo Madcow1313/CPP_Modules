@@ -1,16 +1,16 @@
-NAME = Span
+NAME = MutantStack
 
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror
 
-SOURCE = main.cpp Span.cpp
+SOURCE = main.cpp
 
-HEADER = Span.hpp
+HEADER = MutantStack.hpp
 
 OBJS = $(SOURCE:.cpp=.o)
 
-.cpp.o:
+%.o:	%.cpp $(HEADER)
 		$(CC) $(CFLAGS) -std=c++98 -c $< -o $(<:.cpp=.o)
 
 all: $(NAME)
