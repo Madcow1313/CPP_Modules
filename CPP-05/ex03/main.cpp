@@ -37,6 +37,7 @@ int main()
 	{
 		newForm = Sophy.makeForm("shruberry creation", "home");
 		newForm->beSigned(Director);
+		Director.executeForm(*newForm);
 	}
 	catch(const std::exception& e)
 	{

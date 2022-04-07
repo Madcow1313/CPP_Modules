@@ -11,6 +11,7 @@ int main()
 	Form SecondGradeForm("Form 2B", 50, 150);
 	Form ThirdGradeForm("Form A18", 150, 150);
 
+	std::cout << FirstGradeForm << std::endl;
 	try
 	{
 		Intern.signForm(FirstGradeForm);
@@ -37,5 +38,16 @@ int main()
 	{
 		std::cerr << err.what() << std::endl;
 	}
+
+	std::cout << FirstGradeForm << std::endl;
+	try
+	{
+		Form LastForm("Form Z1", 151, 1);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
 	return (0);
 }

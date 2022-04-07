@@ -23,8 +23,6 @@ class Array
 		};
 };
 
-
-
 template <class T>
 Array<T>::Array()
 {

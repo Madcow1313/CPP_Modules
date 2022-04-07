@@ -54,11 +54,25 @@ void check_char( double d )
 }
 
 
+int	compare_with_ascii( std::string string )
+{
+	std::string numbers[10] = { "0", "1", "2", "3", "4", "5", "6" "7", "8", "9"};
+	for (int i = 0; i < 10; i++)
+	{
+		if (!numbers[i].compare(string))
+			return (1);
+	}
+	return (0);
+} 
+
 void print_types( std::string string, double d, int type )
 {
 	if (type == 1)
 	{
-		std::cout << "char: " << static_cast<char>(d) << std::endl;
+		if (compare_with_ascii( string ))
+			std::cout << "char: Non displayable" << std::endl;
+		else
+			std::cout << "char: " << static_cast<char>(d) << std::endl;
 		std::cout << "int: " << static_cast<int>(d) << std::endl;
 		std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(d) << "f" << std::endl;
 		std::cout <<  "double: " << std::fixed << static_cast<double>(d) << std::endl;

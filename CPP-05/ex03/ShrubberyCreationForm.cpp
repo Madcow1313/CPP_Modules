@@ -40,7 +40,7 @@ void ShrubberyCreationForm::execute( Bureaucrat const &otherB ) const
 		std::cerr << otherB.getName() << " couldn't execute the form because";
 		throw(Form::NotSigned());
 	}
-	filename.append(this->getName());
+	filename.append(this->target);
 	filename.append("_shrubbery");
 	std::ofstream outfile;
 	outfile.open(filename.c_str());

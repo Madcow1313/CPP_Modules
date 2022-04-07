@@ -43,5 +43,7 @@ int main()
 	}
 	Bureaucrat Carl;
 	std::cout << Carl << std::endl;
+	Carl.increaseGrade();
+	std::cout << Carl << std::endl;
 	return (0);
 }

@@ -25,6 +25,9 @@ int main()
 		std::cerr << e.what() << '\n';
 	}
 
+	Array<int> arr10(10);
+	std::cout << "here" << arr10[0] << std::endl;
+
 	std::cout << "assignment and [] check" << std::endl;
 	Array<int> arr2(5);
 
@@ -71,13 +74,5 @@ int main()
 		std::cout << MyAwesomeClass[i] << std::endl;
 	}
 
-	std::cout << "Copy constructor and size" << std::endl;
-
-	Array<Awesome> NotSoAwesome(MyAwesomeClass);
-	NotSoAwesome[0] = 123;
-	for (unsigned int i = 0; i < NotSoAwesome.size(); i++)
-	{
-		std::cout << NotSoAwesome[i] << " ";
-		std::cout << MyAwesomeClass[i] << std::endl;
-	}
+	std::cout << "size is " << MyAwesomeClass.size() << std::endl;
 }

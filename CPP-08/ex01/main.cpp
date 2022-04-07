@@ -69,6 +69,9 @@ int main()
 	new_el[19999] = 123456;
 	Arr.addNumber(new_el.begin(), new_el.end());
 
+	std::cout << "when full" << std::endl;
+	Arr.addNumber(new_el.begin(), new_el.end());
+
 	std::cout << "after addNumber vector" << std::endl;
 	for (unsigned int i = 0; i < Arr.get_currentsize(); i++)
 	{
@@ -82,6 +85,18 @@ int main()
 	sp.addNumber(17);
 	sp.addNumber(9);
 	sp.addNumber(11);
-	std::cout << sp.shortestSpan() << std::endl;
-	std::cout << sp.longestSpan() << std::endl;
+	std::cout << "Shortest span in sp " << sp.shortestSpan() << std::endl;
+	std::cout << "Longest span in sp " << sp.longestSpan() << std::endl;
+
+
+	/*
+	std::cout << "Big Span" << std::endl;
+	Span new_Span(10000);
+
+	new_el[100] = 123;
+	new_Span.addNumber(new_el.begin(), new_el.end());
+	for (unsigned int i = 0; i < 101; i++)
+	{
+		std::cout << new_Span.get_array()[i] << std::endl;
+	}*/
 }

@@ -27,4 +27,7 @@ int main()
 	
 	std::cout << "_________" << "after" << "__________" << std::endl;
 	std::cout << shit2->number << " and " << shit2->string << std::endl;
+
+	if (shit2 == deserialize(serialize(shit2)))
+		std::cout << shit2->number << " and " << shit2->string << std::endl;
 }

@@ -54,10 +54,10 @@ int	Form::getGradeToExec() const
 std::ostream &operator<<(std::ostream &out, Form const &other)
 {
 	out << other.getName() << ", Form grade " << other.getGrade();
-	if (other.getGradeToExec())
-		out << "is signed and it's grade to execute is " << other.getGradeToExec() << ".";
+	if (other.getIsSigned())
+		out << " is signed and it's grade to execute is " << other.getGradeToExec() << ".";
 	else
-		out << "is not signed and it's grade to execute is " << other.getGradeToExec() << ".";
+		out << " is not signed and it's grade to execute is " << other.getGradeToExec() << ".";
 	return (out);
 }
 

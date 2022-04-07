@@ -1,5 +1,12 @@
 #include "Span.hpp"
 
+
+Span::Span()
+{
+	this->max_size = 0;
+	this->current_size = 0;	
+}
+
 Span::Span(unsigned int N)
 {
 	this->max_size = N;
@@ -8,6 +15,19 @@ Span::Span(unsigned int N)
 
 Span::~Span()
 {
+}
+
+Span::Span( Span const &other )
+{
+	*this = other;
+}
+
+Span & Span::operator=( Span const &other )
+{
+	this->max_size = other.max_size;
+	this->current_size = other.current_size;
+	this->array = other.array;
+	return (*this);
 }
 
 void Span::addNumber(int number)

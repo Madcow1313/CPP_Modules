@@ -39,5 +39,5 @@ void RobotomyRequestForm::execute( Bureaucrat const &executor) const
 		throw(Form::NotSigned());
 	}
 	std::cout << "BrrRRRrrrRRrrrrr.....DrrrrrdDD.........BOOOOM!!!!!!!!!!!" << std::endl;
-	std::cout << this->getName() << " has been robotomized successfully 50\% of the time" << std::endl;
+	std::cout << this->target << " has been robotomized successfully 50\% of the time" << std::endl;
 }

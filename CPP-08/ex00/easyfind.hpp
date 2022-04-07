@@ -1,14 +1,14 @@
 #ifndef EASYFIND_HPP
 #define EASYFIND_HPP
 
-#include <iomanip>
 #include <iostream>
 #include <algorithm>
 #include <vector>
 #include <iterator>
+#include <list>
 
 template<class T>
-std::vector<int>::iterator easyfind( T t, int i )
+typename T::iterator easyfind( T t, int i )
 {
 	class No_result : public std::exception
 	{
@@ -17,7 +17,7 @@ std::vector<int>::iterator easyfind( T t, int i )
 			return ("No match found");
 		}
 	};
-	std::vector<int>::iterator result = std::find(t.begin(), t.end(), i );
+	typename T::iterator result = std::find(t.begin(), t.end(), i );
 	if (result == t.end())
 		throw(No_result());
 	return (result);

@@ -12,8 +12,11 @@ private:
 	unsigned int max_size;
 	unsigned int current_size;
 public:
+	Span();
 	Span(unsigned int N);
 	~Span();
+	Span( Span const &other );
+	Span & operator=( Span const &other );
 	void addNumber(int number);
 
 	unsigned int get_maxsize();
@@ -31,8 +34,8 @@ public:
 	{
 		const char *what() const throw();
 	};
-	template <class Iterator>
-	void addNumber( Iterator First, Iterator Last)
+	template <class T>
+	void addNumber( T First, T Last )
 	{
 		if (std::distance(First, Last) <= this->max_size - this->current_size)
 		{
